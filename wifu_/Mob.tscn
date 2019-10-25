@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Mob.gd" type="Script" id=1]
+[ext_resource path="res://Меню.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 34.8222
+height = 28.8308
+
+[node name="Mob" type="RigidBody2D"]
+position = Vector2( 11.1036, 12.9543 )
+input_pickable = true
+collision_mask = 0
+gravity_scale = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+MIN_SPEED = 150
+MAX_SPEED = 250
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="."]
+
+[node name="Меню" type="Sprite" parent="."]
+position = Vector2( -24.8809, -8.03793 )
+texture = ExtResource( 2 )
